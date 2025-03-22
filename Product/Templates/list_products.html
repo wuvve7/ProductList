@@ -1,0 +1,29 @@
+{% extends 'landing_page.html' %}
+
+{% block title %}Product List{% endblock %}
+
+{% block content %}
+    <h2>All Products</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Company</th>
+                <th>Expire Year</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product.kind }}</td>
+                    <td>{{ product.company.name }}</td>
+                    <td>{{ product.expire_year }}</td>
+                    <td>
+                        <a href="{% url 'view_product' product.id %}">View</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'landing_page.html' %}
+
+{% block title %}{{ product.kind }} - Product Details{% endblock %}
+
+{% block content %}
+    <div class="product-detail">
+        <h2>{{ product.kind }} - Product Details</h2>
+        <table>
+            <tr>
+                <th>Product Name</th>
+                <td>{{ product.kind }}</td>
+            </tr>
+            <tr>
+                <th>Company</th>
+                <td>{{ product.company.name }}</td>
+            </tr>
+            <tr>
+                <th>Expire Year</th>
+                <td>{{ product.expire_year }}</td>
+            </tr>
+        </table>
+        <br>
+        <a href="{% url 'list_products' %}" class="btn">Back to Product List</a>
+    </div>
+{% endblock %}

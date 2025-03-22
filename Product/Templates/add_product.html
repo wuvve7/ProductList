@@ -1,0 +1,16 @@
+{% extends 'landing_page.html' %}
+
+{% block title %}Add New Product{% endblock %}
+
+{% block content %}
+    <h2>Add New Product</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            {{ form.as_p }}
+        </div>
+        <button type="submit">add product</button>
+    </form>
+    <br>
+    <a href="{% url 'list_products' %}">back to list</a>
+{% endblock %}

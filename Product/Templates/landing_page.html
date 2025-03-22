@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Welcome to Our Product Site{% endblock %}</title>
+    
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Welcome to Our Product Site</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'landing_page' %}">Home</a></li> 
+                    <li><a href="{% url 'list_products' %}">Product List</a></li> 
+                    <li><a href="{% url 'add_product' %}">Add Product</a></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="intro">
+                <h2>About Our Website</h2>
+                <p>
+                    Welcome to our Product Management Site! This platform allows you to browse, view, and manage a list of products. Whether you're looking for information about different products, or you want to add a new product to our inventory, you're in the right place. 
+                </p>
+                <p>
+                    Our website is designed to help businesses and individuals easily manage their product catalog. You can view detailed product information, including product names, associated companies, and expiration dates.
+                </p>
+                <p>
+                    We aim to provide a user-friendly and efficient experience for managing your products. Start by exploring our product list or adding new products to the site!
+                </p>
+            </section>
+
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+</body>
+</html>
